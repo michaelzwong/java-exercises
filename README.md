@@ -1,3 +1,3 @@
 # java-exercises
 
-Java exercises for practice
+Programming practice
