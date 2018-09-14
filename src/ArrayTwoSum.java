@@ -26,7 +26,7 @@ public class ArrayTwoSum {
                                    + " = " 
                                    + Integer.toString(sum));
                 if(sum==target) {
-                    return new int[]{nums[i], nums[j]};
+                    return new int[]{i, j};
                 }
             }
         }
