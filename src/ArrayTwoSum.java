@@ -1,12 +1,12 @@
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * Assuming that exactly one solution is possible and the same element may not be used twice
+ * 
  * @author michaelwong
  *
  */
 public class ArrayTwoSum {
-    // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-    // Assuming that exactly one solution is possible and the same element may not be used twice
+	
     public int[] twoSum(int[] nums, int target) {
         // 0th item makes length - (1 + 0 comparisons)
         // 1st item makes length - (1 + 1 comparisons)
