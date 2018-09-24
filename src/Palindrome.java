@@ -1,10 +1,17 @@
 /**
+ * LeetCode Easy.
  * 
  * @author michaelwong
  *
  */
 public class Palindrome {
-	// Checks if an integer is a palindrome
+	/**
+	 * Determine whether an integer is a palindrome. 
+	 * An integer is a palindrome when it reads the same backward as forward.
+	 * 
+	 * @param x - Integer to check
+	 * @return boolean - Palindrome or not
+	 */
     public boolean isPalindrome(int x) {
         if(x<0) {
             return false;

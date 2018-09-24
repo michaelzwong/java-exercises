@@ -1,5 +1,16 @@
-
+/**
+ * LeetCode Easy.
+ * 
+ * @author michaelwong
+ *
+ */
 public class ReverseInt {
+	/**
+	 *  * Given a 32-bit signed integer, reverse digits of an integer.
+	 * 
+	 * @param x - Number to reverse
+	 * @return int - Reversed number
+	 */
     public int reverse(int x) {
         int resultNumber = 0;
         for (int i = x; i !=0; i /= 10) {

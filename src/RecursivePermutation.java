@@ -1,15 +1,27 @@
 
 /**
- * Recursive string permutation printer.
+ * Practice Algorithm.
+ * 
  * @author michaelwong
  *
  */
 public class RecursivePermutation {
 	
+	/**
+	 * Recursive string permutation printer.
+	 * 
+	 * @param str - Word to permute
+	 */
 	public static void permutation(String str) {
 		permutation(str, "");
 	}
 	
+	/**
+	 * Recursive string permutation printer.
+	 * 
+	 * @param str - Permute
+	 * @param prefix - Prefix to add on to
+	 */
 	public static void permutation(String str, String prefix) {
 		int n = str.length();
 		if (n == 0) {

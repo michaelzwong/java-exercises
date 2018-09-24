@@ -1,9 +1,21 @@
+/**
+ * LeetCode Medium.
+ * 
+ * @author michaelwong
+ *
+ */
 public class LinkedLists {
 	
-	// Given are two non-empty linked lists representing two non-negative integers. 
-	// The digits are stored in reverse order and each of their nodes contain a single digit. 
-	// Adds the two numbers and return it as a linked list.
-	// Assume the two numbers do not contain any leading zero, except the number 0 itself.
+	/**
+	 * Given are two non-empty linked lists representing two non-negative integers. 
+	 * The digits are stored in reverse order and each of their nodes contain a single digit.
+	 * Adds the two numbers and return it as a linked list.
+	 * Assume the two numbers do not contain any leading zero, except the number 0 itself.
+	 * 
+	 * @param l1 - Number 1
+	 * @param l2 - Number 2
+	 * @return LinkedNode - LinkedList representation of sum.
+	 */
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
         // int to carry over
@@ -78,7 +90,12 @@ public class LinkedLists {
 }
 
 
-// Definition for singly-linked list.
+/**
+ * Definition for singly-linked list.
+ * 
+ * @author michaelwong
+ *
+ */
 class ListNode {
 	int val;
 	ListNode next;
