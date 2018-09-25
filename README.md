@@ -1,3 +1,3 @@
 # java-exercises
 
-Programming practice
+Programming practice. Mostly my solutions to algorithms from LeetCode.
