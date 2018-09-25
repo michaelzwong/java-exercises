@@ -6,7 +6,7 @@
  */
 public class ReverseInt {
 	/**
-	 *  * Given a 32-bit signed integer, reverse digits of an integer.
+	 * Given a 32-bit signed integer, reverse digits of an integer.
 	 * 
 	 * @param x - Number to reverse
 	 * @return int - Reversed number
