@@ -21,9 +21,7 @@ public class LongestCommonPrefix {
             if(strs[i].length() < minLength)
                 minLength = strs[i].length();
         }
-        String prefix =""; // Prefix
         String testPrefix = "";
-        boolean matches = true; // Check for matching prefixes
         // Loop through the characters each string at most "minLength" times
         for(int i = 0; i < minLength; i++) {
             // Loop through each string in the array
@@ -33,18 +31,11 @@ public class LongestCommonPrefix {
                 // System.out.println("Test Prefix: " + testPrefix);
                 // Check fo prefix matches
                 if(!testPrefix.equals(strs[j].substring(0,i+1))) {
-                    matches = false;
-                    break;
+                    return strs[0].substring(0,i);
                 }
             }
-            if(!matches) {
-                prefix = strs[0].substring(0,i);
-                break;
-            }
+
         }
-        if(matches) {
-            prefix = strs[0].substring(0,minLength);
-        }
-        return prefix;
+        return strs[0].substring(0,minLength);
     }
 }
