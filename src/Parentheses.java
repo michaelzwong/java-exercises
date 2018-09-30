@@ -69,31 +69,7 @@ public class Parentheses {
             }
             i++;
             
-            
-            
-            // String rightParens = "";
-            // // If ), }, or ].
-            // if(i < s.length() && mMap.containsValue(s.charAt(i))) {
-            //     while(i < s.length() && mMap.containsValue(s.charAt(i))) {
-            //         rightParens += s.charAt(i);
-            //         i++;
-            //     }
-            //     String reverseParens = reverseParentheses(leftParens, mMap);
-            //     leftParens = "";
-            //     if(!rightParens.equals(reverseParens)) {
-            //         System.out.println(rightParens + " != " + reverseParens);
-            //         return false; 
-            //     }
-            //     closed = true;
-            // }
         }
         return closed;
 	}
-    private String reverseParentheses(String seq, Map<Character,Character> mMap) {
-        String reverse = "";
-        for(int i = seq.length() - 1; i >= 0; i --) {
-            reverse += mMap.get(seq.charAt(i));
-        }
-        return reverse;
-    }
 }
