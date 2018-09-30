@@ -60,6 +60,7 @@ public class Parentheses {
                     // System.out.println(lastParen + " != " + s.charAt(i));
                     return false;
                 } else {
+                	// Subtract the last parentheses from leftParens
                     leftParens = leftParens.substring(0, leftParens.length()-1);
                     // System.out.println("leftParens = " + leftParens);
                 }
