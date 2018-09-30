@@ -19,7 +19,7 @@ public class Parentheses {
 	 */
 	public boolean isValid(String s) {
         
-        // Empty string
+		// Empty string
         if(s.length() == 0) {
             return true;
         }
@@ -38,35 +38,57 @@ public class Parentheses {
         // Loop through each char
         int i = 0;
         String leftParens = "";
-        boolean closed = true;
+        boolean closed = false;
         while(i < s.length()) {
             // If (, {, or [.
             if(mMap.containsKey(s.charAt(i))) {
-                closed = false;
-                // System.out.println("Contains Key "  + s.charAt(i));
+                // System.out.print("Added "  + s.charAt(i));
                 leftParens += s.charAt(i);
-                i++;
-                
+                // System.out.println(" Now: " + leftParens);
+                closed = false;
             }
-            String rightParens = "";
             // If ), }, or ].
-            if(i < s.length() && mMap.containsValue(s.charAt(i))) {
-                while(i < s.length() && mMap.containsValue(s.charAt(i))) {
-                    rightParens += s.charAt(i);
-                    i++;
+            if(mMap.containsValue(s.charAt(i))) {
+                // System.out.println("s.charAt(i): "+s.charAt(i));
+                if(leftParens=="") {
+                    return false;
                 }
-                String reverseParens = reverseParentheses(leftParens, mMap);
-                leftParens = "";
-                if(!rightParens.equals(reverseParens)) {
-                    System.out.println(rightParens + " != " + reverseParens);
-                    return false; 
+                // Check if it closes the most recent left parentheses
+                char lastParen = mMap.get(leftParens.charAt(leftParens.length() - 1));
+                // System.out.println(lastParen);
+                if(lastParen != s.charAt(i)) {
+                    // System.out.println(lastParen + " != " + s.charAt(i));
+                    return false;
+                } else {
+                    leftParens = leftParens.substring(0, leftParens.length()-1);
+                    // System.out.println("leftParens = " + leftParens);
                 }
-                closed = true;
+                if(leftParens.equals("")) {
+                    closed = true;
+                }
             }
+            i++;
+            
+            
+            
+            // String rightParens = "";
+            // // If ), }, or ].
+            // if(i < s.length() && mMap.containsValue(s.charAt(i))) {
+            //     while(i < s.length() && mMap.containsValue(s.charAt(i))) {
+            //         rightParens += s.charAt(i);
+            //         i++;
+            //     }
+            //     String reverseParens = reverseParentheses(leftParens, mMap);
+            //     leftParens = "";
+            //     if(!rightParens.equals(reverseParens)) {
+            //         System.out.println(rightParens + " != " + reverseParens);
+            //         return false; 
+            //     }
+            //     closed = true;
+            // }
         }
         return closed;
-    }
-    
+	}
     private String reverseParentheses(String seq, Map<Character,Character> mMap) {
         String reverse = "";
         for(int i = seq.length() - 1; i >= 0; i --) {
