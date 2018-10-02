@@ -1,5 +1,5 @@
 /**
- * LeetCode Medium.
+ * LeetCode Medium + Easy.
  * 
  * @author michaelwong
  *
