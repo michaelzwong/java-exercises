@@ -12,7 +12,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-        RecursivePermutation.permutation("Cat");
+        System.out.println(Palindrome.longestPalindrome("babaddtattarrattatbabaddtattarrattatddetartrateedredividerb"));
         
     }
 }
