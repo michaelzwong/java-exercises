@@ -161,26 +161,30 @@ public class LinkedLists {
         
         boolean updateHead = false;
         
-        // Store first in a temporary ListNode
-        // Swap places between first and second ListNode
-        // Make sure to link the nodes after first and second
+        // Loop through two adjacent nodes at a time
         while(first != null && second != null) {
-
-            ListNode temp = new ListNode(first.val); // store first in temp  
-            first = second; // first becomes second
-            second = temp; // second becomes what first was
-            second.next = first.next; // second next becomes first's next
-            first.next = second; // Link the two nodes together in new order
+        	
+            ListNode temp = new ListNode(first.val); // Temporary node for swapping
             
-            if(!updateHead) { // Update head of LinkedList if the two swapped
-                head = first; // nodes are the first two
+            // Swap two nodes
+            first = second;
+            second = temp;
+            second.next = first.next;
+            first.next = second;
+            
+            // Update head if not updated already
+            if(!updateHead) {
+                head = first; 
                 updateHead = true;
             }
-            if(prev != null) { 	   // Every loop swaps two nodes, prev helps link the newly
-                prev.next = first; // swapped nodes with the nodes before
+            
+            // Link newly swapped nodes with the nodes before
+            if(prev != null) {
+                prev.next = first;
             }
             prev = second;
             
+            // Proceed to the next two nodes
             first = second.next;
             if(first != null && second.next != null) second = second.next.next;
             
