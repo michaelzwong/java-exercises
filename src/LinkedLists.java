@@ -141,6 +141,58 @@ public class LinkedLists {
         
     }
 	
+	/**
+	 * Given a linked list, swap every two adjacent nodes and return its head.
+	 * 
+	 * @param head
+	 * @return
+	 */
+	public ListNode swapPairs(ListNode head) {
+        if(head == null) {
+            return null;
+        }
+        if(head.next == null) {
+            return head;
+        }
+        
+        ListNode first = head;
+        ListNode second = head.next;
+        ListNode prev = null;
+        
+        boolean updateHead = false;
+        
+        // Store first in a temporary ListNode
+        // Swap places between first and second ListNode
+        // Make sure to link the nodes after first and second
+        while(first != null && second != null) {
+
+            ListNode temp = new ListNode(first.val); // store first in temp  
+            // System.out.println("1. ["+first.val+","+second.val+"]");
+            first = second; // first becomes second
+            // System.out.println(first.val);
+            second = temp; // second becomes what first was
+            // System.out.print(first + "!=");
+            second.next = first.next; // second next becomes first's next
+            first.next = second; //
+            // System.out.println("2. ["+first.val+","+second.val+"]");
+            if(!updateHead) {
+                head = first;
+                updateHead = true;
+            }
+            if(prev != null) {
+                prev.next = first;
+            }
+            prev = second;
+            
+            first = second.next;
+            if(first != null && second.next != null) second = second.next.next;
+            
+
+        }
+        return head;
+        
+    }
+	
 }
 
 
