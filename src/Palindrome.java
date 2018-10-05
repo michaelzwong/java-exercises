@@ -24,12 +24,16 @@ public class Palindrome {
     }
     
     public static String longestPalindrome(String s) {
-        if(isPalindrome(s)) {
-            return s;
+        if(s == null || s.length() == 1) {
+        	return "";
         }
-        String divisionOne = longestPalindrome(s.substring(0,s.length()-1));
-        String divisionTwo = longestPalindrome(s.substring(1,s.length()));                                   
-        return (divisionOne.length() >= divisionTwo.length()) ? divisionOne : divisionTwo;
+        
+        char[] charArray = new char[s.length()*2+1];
+        
+        
+        
+        int center = s.length()/2;
+        return "";
     }
     
     /**
