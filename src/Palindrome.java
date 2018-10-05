@@ -32,7 +32,7 @@ public class Palindrome {
         return (divisionOne.length() >= divisionTwo.length()) ? divisionOne : divisionTwo;
     }
     
-    private static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {
         if(s.length() == 1 || s.length() == 0) {
             return true;
         }
