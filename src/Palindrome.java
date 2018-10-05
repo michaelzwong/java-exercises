@@ -32,8 +32,15 @@ public class Palindrome {
         return (divisionOne.length() >= divisionTwo.length()) ? divisionOne : divisionTwo;
     }
     
+    /**
+     * Helper method for longestPalindrome.
+     * Checks if a string is a palindrome.
+     * 
+     * @param s - String to check
+     * @return boolean - Palindrome or not
+     */
     public static boolean isPalindrome(String s) {
-        if(s.length() == 1 || s.length() == 0) {
+        if(s.length() == 1) {
             return true;
         }
         int count = s.length() / 2;
