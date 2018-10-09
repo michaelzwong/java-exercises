@@ -47,19 +47,41 @@ public class Palindrome {
         	i++;
         }
         
-        Map<Integer, Integer> centerLength = new HashMap<Integer,Integer>();
+        // System.out.println(charArray);
+        
+        int longestCenterIndex = 0;
+        int longestLength = 0;
+        
         for(int center = 0; center < charArray.length; center++) {
         	int j = 1;
-        	int paliLength = 1;
+        	int paliLength = 0;
+        	// System.out.println("Center " + center + ":" + " " + Character.toString(charArray[center]));
         	while(center - j >= 0 && center + j < charArray.length) {
         		if(charArray[center - j] == charArray[center + j]) {
-        			paliLength += 1;
-        		} else {
-        			// if()
+        			// System.out.println(Character.toString(charArray[center - j]) + " == " + Character.toString(charArray[center + j]));
+        			paliLength ++;
         		}
-        	}
-        		
+        		if(paliLength > longestLength) {
+        			longestCenterIndex = center;
+        			longestLength = paliLength;
+        			// System.out.println("Longest Center Index (" + longestCenterIndex + ") of Length " + longestLength);
+        		}
+        		if(charArray[center - j] != charArray[center + j]) {
+        			break;
+        		}
+    			j++;
+
+        	}		
         }
+        
+        String longestSubstring = "";
+        // extract longest substring from char array
+        for(i = longestCenterIndex - longestLength; i < longestCenterIndex + longestLength; i++) {
+        	if(charArray[i] != '#') {
+        		longestSubstring += charArray[i];
+        	}
+        }
+        
 //        
 //        int[] intArray = new int[s.length()*2+1];
 //        
@@ -78,7 +100,7 @@ public class Palindrome {
 //        	
 //        }
         
-        return "";
+        return longestSubstring;
     }
     
     /**
