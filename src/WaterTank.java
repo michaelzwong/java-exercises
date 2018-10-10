@@ -11,6 +11,8 @@ public class WaterTank {
 	 * n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). 
 	 * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
 	 * 
+	 * @param height - array of heights
+	 * @return max area
 	 */
 	public int maxArea(int[] height) {
         if(height.length < 2) return 0;
