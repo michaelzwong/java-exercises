@@ -17,23 +17,23 @@ public class Duplicates {
 	 * @return - length of array with unique numbers
 	 */
 	public int removeDuplicates(int[] nums) {
-        if(nums.length == 0) {
-            return 0;
-        }
-        int n = -1;
-        if(nums[0] == -1) {
-            n = -2;
-        }
-        int j = 0;
-        for(int i = 0; i < nums.length; i ++) {
-            // init num
-            if(nums[i] != n) {
-                nums[j] = nums[i];
-                n = nums[i];
-                j += 1;
-            }
-        }
-        return j;
-    }
+		if (nums.length == 0) {
+			return 0;
+		}
+		int n = -1;
+		if (nums[0] == -1) {
+			n = -2;
+		}
+		int j = 0;
+		for (int i = 0; i < nums.length; i++) {
+			// init num
+			if (nums[i] != n) {
+				nums[j] = nums[i];
+				n = nums[i];
+				j += 1;
+			}
+		}
+		return j;
+	}
 
 }
