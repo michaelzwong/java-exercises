@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * LeetCode Easy.
@@ -72,5 +73,26 @@ public class Parentheses {
             
         }
         return closed;
+	}
+	
+	/**
+	 * 
+	 * Stack Implementation
+	 * 
+	 * @param s - Parentheses to check
+	 * @return boolean - Whether or not parentheses are valid
+	 */
+	public boolean isValidStack(String s) {
+        Map<Character,Character> mMap = new HashMap<Character,Character>();
+        
+        mMap.put('(',')');
+        mMap.put('{','}');
+        mMap.put('[',']');
+        
+        Stack<Character> stack = new Stack<Character>();
+        
+        
+        return false;
+
 	}
 }
