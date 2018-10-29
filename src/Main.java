@@ -12,7 +12,12 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-        System.out.println(Palindrome.longestPalindrome("abananabasdfasdfasdfafa"));
+        int[] nums = new int[] {1};
+        
+        String paren = "{[][][][]}";
+        String paren2 = "[][][][[][]]][";
+        
+        System.out.println(Parentheses.isValidStack(paren2));
         
     }
 }

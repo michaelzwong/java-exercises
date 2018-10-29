@@ -82,17 +82,31 @@ public class Parentheses {
 	 * @param s - Parentheses to check
 	 * @return boolean - Whether or not parentheses are valid
 	 */
-	public boolean isValidStack(String s) {
+	public static boolean isValidStack(String s) {
+		
         Map<Character,Character> mMap = new HashMap<Character,Character>();
         
-        mMap.put('(',')');
-        mMap.put('{','}');
-        mMap.put('[',']');
+        mMap.put(')','(');
+        mMap.put('}','{');
+        mMap.put(']','[');
         
         Stack<Character> stack = new Stack<Character>();
         
-        
-        return false;
+        for(int i = 0; i < s.length(); i++) {
+        	char c = s.charAt(i);
+        	
+        	if(mMap.containsKey(c)) {
+        		char topElement = stack.empty() ? '$' : stack.pop();
+        		
+        		if(topElement != mMap.get(c)) {
+        			return false;
+        		}
+        	} else {
+        		stack.push(c);
+        	}
+        }
+ 
+        return stack.isEmpty();
 
 	}
 }
