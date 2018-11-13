@@ -1,4 +1,5 @@
 /**
+ * Question from Thomson Reuters.
  * 
  * @author michaelwong
  *
@@ -13,14 +14,18 @@ public class SegregateEvenOdd {
 	 */
 	public static int segregate(int[] arr) {
 		
+		// Empty array
 		if(arr.length == 0) {
 			return 0;
 		}
 		
+		// Left index
 		int left = 0;
 		
+		// Right index
 		int right = arr.length - 1;
 		
+		// Number of swaps to segregate even and odd numbers in the array
 		int swaps = 0;
 		
 		while(left < right) {
