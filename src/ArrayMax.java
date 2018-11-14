@@ -22,20 +22,21 @@ public class ArrayMax {
         // keeps track of the global maximum sum
         int maxSumSoFar = nums[0];
         
-        // records the max sum up to the current index i 
+        // records the max sum up a contiguous segment up to the current index of i 
         int maxSumAtCurIndex = 0;
         
         // loop through elements in the array
         for(int i = 0; i < nums.length; i++) {
-            // keep track of the sum of a subarray that is non-negative
+            // keep track of the sum of a subarray
         	maxSumAtCurIndex += nums[i];
             
-            // if the sum of a subarray is greater than the current sum, record a new max
+            // if the sum of a subarray is greater than the current max sum, record a new max
             if(maxSumAtCurIndex > maxSumSoFar) {
             	maxSumSoFar = maxSumAtCurIndex;
             }
             
-            // if the result is negative, we reset the subarray to have sum 0
+            // if the sum is negative, we reset the sum to be 0 since we only want to look at contiguous
+            // subarray segments where the sum is positive
             if(maxSumAtCurIndex < 0) {
             	maxSumAtCurIndex = 0;
             }
