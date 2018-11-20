@@ -4,14 +4,14 @@
  * @author michaelwong
  *
  */
-public class ArrayTwoSum {
+public class LC1 {
 	/**
 	 * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 	 * Assume that exactly one solution is possible and the same element may not be used twice.
 	 * 
 	 * @param nums - Array of integers
 	 * @param target - Equal to sum of two integers in nums
-	 * @return
+	 * @return int[] - Indices of the two numbers that add up to a specific target
 	 */
     public int[] twoSum(int[] nums, int target) {
         // 0th item makes length - (1 + 0 comparisons)
@@ -25,7 +25,7 @@ public class ArrayTwoSum {
         for(int i = 0; i < n; i++) {
             for(int j = i + 1; j < m; j++) {
                 int sum = nums[i] + nums[j];
-                print_sum(i, j, sum);
+                // print_sum(i, j, sum);
                 if(sum==target) {
                     return new int[]{i, j};
                 }
