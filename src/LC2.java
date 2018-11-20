@@ -1,10 +1,10 @@
 /**
- * LeetCode Medium + Easy.
+ * LeetCode Medium.
  * 
  * @author michaelwong
  *
  */
-public class LinkedLists {
+public class LC2 {
 	
 	/**
 	 * Given are two non-empty linked lists representing two non-negative integers. 

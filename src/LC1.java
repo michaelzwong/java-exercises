@@ -25,7 +25,7 @@ public class LC1 {
         for(int i = 0; i < n; i++) {
             for(int j = i + 1; j < m; j++) {
                 int sum = nums[i] + nums[j];
-                // print_sum(i, j, sum);
+                print_sum(i, j, sum);
                 if(sum==target) {
                     return new int[]{i, j};
                 }
