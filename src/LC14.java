@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LongestCommonPrefix {
+public class LC14 {
 	/**
 	 * 
 	 * Finds the longest common prefix string amongst an array of strings.
