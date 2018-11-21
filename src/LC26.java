@@ -4,14 +4,14 @@
  * @author michaelwong
  *
  */
-public class Duplicates {
-	
+public class LC26 {
+
 	/**
-	 * Given a sorted array nums, remove the duplicates in-place such that each element appear only 
-	 * once and return the new length.
+	 * Given a sorted array nums, remove the duplicates in-place such that each
+	 * element appear only once and return the new length.
 	 * 
-	 * Do not allocate extra space for another array, you must do this by 
-	 * modifying the input array in-place with O(1) extra memory.
+	 * Do not allocate extra space for another array, you must do this by modifying
+	 * the input array in-place with O(1) extra memory.
 	 * 
 	 * @param nums - array to remove duplicates from
 	 * @return - length of array with unique numbers

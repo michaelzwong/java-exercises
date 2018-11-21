@@ -12,10 +12,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-        int[] nums = new int[] {3, 3, 4, 5, 6, 1, 3, 8, 9};
+		int[] nums = new int[] { 3, 3, 4, 5, 6, 1, 3, 8, 9 };
 
-        
-        System.out.println(SegregateEvenOdd.segregate(nums));
-        
-    }
+		System.out.println(SegregateEvenOdd.segregate(nums));
+
+	}
 }

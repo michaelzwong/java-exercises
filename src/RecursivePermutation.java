@@ -6,7 +6,7 @@
  *
  */
 public class RecursivePermutation {
-	
+
 	/**
 	 * Recursive string permutation printer.
 	 * 
@@ -15,11 +15,11 @@ public class RecursivePermutation {
 	public static void permutation(String str) {
 		permutation(str, "");
 	}
-	
+
 	/**
 	 * Recursive string permutation printer.
 	 * 
-	 * @param str - Permute
+	 * @param str    - Permute
 	 * @param prefix - Prefix to add on to
 	 */
 	public static void permutation(String str, String prefix) {
@@ -27,7 +27,7 @@ public class RecursivePermutation {
 		if (n == 0) {
 			System.out.println(prefix);
 		} else {
-			for(int i = 0; i < n; i++) {
+			for (int i = 0; i < n; i++) {
 				String rem = str.substring(0, i) + str.substring(i + 1);
 				permutation(rem, prefix + str.charAt(i));
 			}
