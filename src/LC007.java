@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC7 {
+public class LC007 {
 	/**
 	 * Given a 32-bit signed integer, reverse digits of an integer.
 	 * 

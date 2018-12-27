@@ -12,9 +12,9 @@ public class PalindromeTest {
 
 	@Test
 	void testIsPalindrome() {
-		assertEquals(true, LC5.isPalindrome("hannah"));
-		assertEquals(false, LC5.isPalindrome("banana"));
-		assertEquals(true, LC5.isPalindrome("tattarrattat"));
+		assertEquals(true, LC005.isPalindrome("hannah"));
+		assertEquals(false, LC005.isPalindrome("banana"));
+		assertEquals(true, LC005.isPalindrome("tattarrattat"));
 
 		// String testString ="babaddtattarrattatddetartrateedredividerb";
 //		while(!testString.equals("")) {
@@ -25,9 +25,9 @@ public class PalindromeTest {
 
 	@Test
 	void testLongestPalindrome() {
-		assertEquals("hannah", LC5.longestPalindrome("himynameishannah"));
-		assertEquals("anana", LC5.longestPalindrome("banana"));
-		assertEquals("bananab", LC5.longestPalindrome("sdfbananabasdf"));
+		assertEquals("hannah", LC005.longestPalindrome("himynameishannah"));
+		assertEquals("anana", LC005.longestPalindrome("banana"));
+		assertEquals("bananab", LC005.longestPalindrome("sdfbananabasdf"));
 		// assertEquals("tattarrattat",
 		// Palindrome.longestPalindrome("babaddtattarrattatddetartrateedredividerb"));
 	}

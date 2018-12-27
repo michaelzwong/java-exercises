@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC53 {
+public class LC053 {
 
 	/**
 	 * Given an integer array nums, find the contiguous subarray (containing at

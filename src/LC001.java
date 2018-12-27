@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC1 {
+public class LC001 {
 
 	/**
 	 * Given an array of integers, return indices of the two numbers such that they

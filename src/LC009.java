@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC9 {
+public class LC009 {
 	/**
 	 * Determine whether an integer is a palindrome. An integer is a palindrome when
 	 * it reads the same backward as forward.

@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC2 {
+public class LC002 {
 	/**
 	 * Given are two non-empty linked lists representing two non-negative integers.
 	 * The digits are stored in reverse order and each of their nodes contain a

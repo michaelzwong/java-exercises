@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC11 {
+public class LC011 {
 
 	/**
 	 * Given n non-negative integers a1, a2, ..., an , where each represents a point

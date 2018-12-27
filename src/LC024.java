@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC24 {
+public class LC024 {
 
 	/**
 	 * Given a linked list, swap every two adjacent nodes and return its head.

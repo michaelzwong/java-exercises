@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC5 {
+public class LC005 {
 
 	/**
 	 * Given a string s, find the longest palindromic substring in s. You may assume

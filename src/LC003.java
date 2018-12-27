@@ -7,7 +7,7 @@ import java.util.List;
  * @author michaelwong
  *
  */
-public class LC3 {
+public class LC003 {
 	/**
 	 * Given a string, find the length of the longest substring without repeating
 	 * characters.

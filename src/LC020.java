@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author michaelwong
  *
  */
-public class LC20 {
+public class LC020 {
 
 	/**
 	 * Open brackets must be closed by the same type of brackets. Open brackets must

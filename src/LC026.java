@@ -4,7 +4,7 @@
  * @author michaelwong
  *
  */
-public class LC26 {
+public class LC026 {
 
 	/**
 	 * Given a sorted array nums, remove the duplicates in-place such that each
