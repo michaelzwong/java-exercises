@@ -28,96 +28,38 @@ public class LC008 {
 	 */
 	public int myAtoi(String str) {
 
-		if (str.length() == 0) {
-			return 0;
-		}
+		int index = 0, sign = 1, total = 0;
+        // Empty string
+        if(str.length() == 0) return 0;
 
-		// Counter
-		int i = 0;
+        // Remove Spaces
+        while(index < str.length() && str.charAt(index) == ' ')
+            index ++;
+        
+        // String has no digits
+        if(index >= str.length()) {
+            return 0;
+        }
 
-		// Add the numbers in str to numString
-		String numString = "";
+        // Handle signs
+        if(str.charAt(index) == '+' || str.charAt(index) == '-'){
+            sign = str.charAt(index) == '+' ? 1 : -1;
+            index ++;
+        }
+        
+        // Convert number and avoid overflow
+        while(index < str.length()){
+            int digit = str.charAt(index) - '0';
+            if(digit < 0 || digit > 9) break;
 
-		boolean isNegative = false;
+            // Check if total will be overflow after 10 times and add digit
+            if(Integer.MAX_VALUE/10 < total || Integer.MAX_VALUE/10 == total && Integer.MAX_VALUE %10 < digit)
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
 
-		// Skip all the initial white spaces
-		while (i < str.length() && str.charAt(i) == ' ') {
-			i++;
-		}
-
-		// Check for negative sign
-		if (i < str.length() && str.charAt(i) == '-') {
-			isNegative = true;
-			i++;
-		}
-		// Check for positive sign
-		else if (i < str.length() && str.charAt(i) == '+') {
-			isNegative = false;
-			i++;
-		}
-		// Check if immediate (sign + 1) character is a digit
-		if (i >= str.length() || !Character.isDigit(str.charAt(i))) {
-			return 0;
-		}
-		// Remove leading 0s
-		while (i < str.length() && Character.isDigit(str.charAt(i)) && str.charAt(i) == '0') {
-			i++;
-		}
-		// Add the subsequent digits to numString
-		while (i < str.length() && Character.isDigit(str.charAt(i))) {
-			numString += str.charAt(i);
-			i++;
-		}
-		// If no subsequent non-zero digits, return 0
-		if (numString.equals("")) {
-			return 0;
-		}
-
-		// Get the maximum possible number of digits
-		int maxNumberOfDigits = String.valueOf(Integer.MAX_VALUE).length();
-
-		if (numString.length() > maxNumberOfDigits) {
-			if (isNegative) {
-				return Integer.MIN_VALUE;
-			}
-			return Integer.MAX_VALUE;
-		}
-		if (numString.length() < maxNumberOfDigits) {
-			if (isNegative) {
-				return -Integer.parseInt(numString);
-			}
-			System.out.println(numString);
-			return Integer.parseInt(numString);
-		}
-
-		if (numString.length() == maxNumberOfDigits) {
-			i = 0;
-			String maxString;
-			if (isNegative) {
-				maxString = String.valueOf(Integer.MIN_VALUE); // -2147483648
-				maxString = maxString.substring(1);
-			} else {
-				maxString = String.valueOf(Integer.MAX_VALUE); // 2147483647
-			}
-			while (i < numString.length()) {
-				if (numString.charAt(i) > maxString.charAt(i)) {
-					break;
-				}
-				if (numString.charAt(i) < maxString.charAt(i)) {
-					if (isNegative) {
-						return -Integer.parseInt(numString);
-					}
-					return Integer.parseInt(numString);
-				}
-				i++;
-			}
-
-			if (isNegative) {
-				return Integer.MIN_VALUE;
-			}
-			return Integer.MAX_VALUE;
-		}
-
-		return 0;
+            total = 10 * total + digit;
+            index ++;
+        }
+        
+        return total * sign;
 	}
 }

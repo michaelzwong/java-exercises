@@ -19,7 +19,5 @@ public class Main {
 //
 //		System.out.println(SegregateEvenOdd.segregate(nums));
 		
-		System.out.println(LC008.myAtoi("-2147483647"));
-		System.out.println(Integer.MAX_VALUE);
 	}	
 }
