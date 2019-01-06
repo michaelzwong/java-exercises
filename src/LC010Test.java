@@ -27,7 +27,8 @@ class LC010Test {
 	
 	@Test
 	void testWithStar() {
-		
+		assertTrue(test.isMatch("apple", "a*pple"));
+		assertTrue(test.isMatch("aa","a*"));
 	}
 
 }

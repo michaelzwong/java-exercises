@@ -29,29 +29,41 @@ public class LC010 {
 		// Empty strings
 		matches[0][0] = true;
 		
+		// Handle cases where pattern could be an expression for an empty string
+		// ex. a*, a*p*, a*p*p*, etc...
+		for(int i = 1; i < matches[0].length; i++) {
+			if(p.charAt(i - 1) == '*') {
+				matches[0][i] = matches[0][i - 2];
+			}
+		}
+		
+		
+		
 		// Loop through the string and pattern
-		for(int i = 0; i < matches.length; i++) {
-			for(int j = 0; j < matches[0].length; j++) {
+		for(int i = 1; i < matches.length; i++) {
+			for(int j = 1; j < matches[0].length; j++) {
 				// Case 1: match or '.'
-				if(p.charAt(j) == s.charAt(i) || p.charAt(j) == '.') {
+				if(p.charAt(j - 1) == s.charAt(i - 1) || p.charAt(j - 1) == '.') {
 					// Value is equal to substring up to and not including
 					// characters at index i and j
-					matches[i + 1][j + 1] = matches[i][j];
+					matches[i][j] = matches[i - 1][j - 1];
 				}
 				// Case 2: '*'
-				else if(p.charAt(j) == '*') {
-					// Check whether the substrin
-					matches[i + 1][j + 1] = matches[i + 1][j - 1];
-					if(pattern[])
-					
+				else if(p.charAt(j - 1) == '*') {
+					// When * means 0 of the preceding character
+					matches[i][j] = matches[i][j - 2];
+					// Check the character before * and its preceding character
+					if(p.charAt(j - 2) == s.charAt(i - 1) || p.charAt(j - 2) == '.') {
+						matches[i][j] = matches[i][j]|matches[i - 1][j];
+					}
 				}
 				// Case 3: no match
 				else {
-					
+					matches[i][j] = false;
 				}
 			}
 		}
 		
-		return false;
+		return matches[s.length()][p.length()];
 	}
 }
