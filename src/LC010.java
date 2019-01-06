@@ -20,31 +20,36 @@ public class LC010 {
 	 */
 	public boolean isMatch(String s, String p) {
 		
-		// Empty string and pattern
-		if(s.length() == 0 && p.length() == 0) {
-			return true;
-		}
+		// Use length + 1 so that index 0 can accommodate empty strings
 		
-		if(s.length() == p.length() && s.equals(p)) {
-			return true;
-		}
+		// Use a 2D array to dynamically store if the character at index i of
+		// s string matches the character at index j of p pattern
+		boolean matches[][] = new boolean[s.length() + 1][p.length() + 1];
 		
-		int i = 0;
+		// Empty strings
+		matches[0][0] = true;
 		
-		while(i < p.length()) {
-			
-			if(p.charAt(i) == s.charAt(i)) {
-				continue;
+		// Loop through the string and pattern
+		for(int i = 0; i < matches.length; i++) {
+			for(int j = 0; j < matches[0].length; j++) {
+				// Case 1: match or '.'
+				if(p.charAt(j) == s.charAt(i) || p.charAt(j) == '.') {
+					// Value is equal to substring up to and not including
+					// characters at index i and j
+					matches[i + 1][j + 1] = matches[i][j];
+				}
+				// Case 2: '*'
+				else if(p.charAt(j) == '*') {
+					// Check whether the substrin
+					matches[i + 1][j + 1] = matches[i + 1][j - 1];
+					if(pattern[])
+					
+				}
+				// Case 3: no match
+				else {
+					
+				}
 			}
-			
-			if(p.charAt(i) == '*') {
-				
-			}
-			
-			if(p.charAt(i) == '.') {
-				
-			}
-			
 		}
 		
 		return false;
