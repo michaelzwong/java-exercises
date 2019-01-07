@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+//import java.util.ArrayList;
+//import java.util.HashSet;
+//import java.util.Set;
 
 /**
  * Test classes and methods from here.
@@ -18,11 +18,11 @@ public class Main {
 //		int[] nums = new int[] { 3, 3, 4, 5, 6, 1, 3, 8, 9 };
 //
 //		System.out.println(SegregateEvenOdd.segregate(nums));
-		int[] nums1 = new int[] {3, 4, 5, 6, 8};
-		int[] nums2 = new int[] {5, 6, 8, 10};
-		int[] nums = new int[] {1};
+//		int[] nums1 = new int[] {3, 4, 5, 6, 8};
+//		int[] nums2 = new int[] {5, 6, 8, 10};
+//		int[] nums = new int[] {1};
 		
-		double median = LC004.findMedianSortedArrays(nums, nums);
-		System.out.println(median);
+//		double median = LC004.findMedianSortedArrays(nums, nums);
+//		System.out.println(median);
 	}	
 }
