@@ -26,14 +26,30 @@ public class LC012 {
 	 * 
 	 * I can be placed before V (5) and X (10) to make 4 and 9. X can be placed
 	 * before L (50) and C (100) to make 40 and 90. C can be placed before D (500)
-	 * and M (1000) to make 400 and 900. Given an integer, convert it to a roman
+	 * and M (1000) to make 400 and 900. Given an integer, convert it to a Roman
 	 * numeral. Input is guaranteed to be within the range from 1 to 3999.
 	 * 
 	 * @param num - Number to convert
 	 * @return String - Roman numeral representation
 	 */
 	public String intToRoman(int num) {
-		return "";
-	}
+		String[] symbols = new String[] { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+		int[] values = new int[] { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+		int i = 0;
+
+		String romanNumeral = "";
+		while (num != 0) {
+			if (num - values[i] >= 0) {
+				romanNumeral += symbols[i];
+				num -= values[i];
+			} else {
+				i++;
+			}
+		}
+
+		return romanNumeral;
+
+    }
 
 }
