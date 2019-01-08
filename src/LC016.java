@@ -27,21 +27,23 @@ public class LC016 {
 		// Loop through the array nums.length times
 		for (int i = 0; i < nums.length; i++) {
 			int cur = nums[i];
-			
+
 			int l = i + 1;
 			int r = nums.length - 1;
 
-			while(l < r) {
+			while (l < r) {
 				int left = nums[l];
 				int right = nums[r];
 				int sum = cur + left + right;
 				int diff = Math.abs(target - sum);
-
+				if (diff == 0) {
+					return sum;
+				}
 				if (diff < minDiff) {
 					minDiff = diff;
 					minSum = sum;
 				}
-				if(sum > target) {
+				if (sum > target) {
 					r--;
 				} else {
 					l++;
