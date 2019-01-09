@@ -24,5 +24,8 @@ public class Main {
 		
 //		double median = LC004.findMedianSortedArrays(nums, nums);
 //		System.out.println(median);
+		LC017 test = new LC017();
+		
+		test.letterCombinations("23");
 	}	
 }
