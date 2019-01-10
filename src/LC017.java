@@ -79,4 +79,15 @@ public class LC017 {
 		return result;
 
 	}
+	
+	/**
+	 * This solution is iterative.
+	 * 
+	 * @param digits - The numbers that will be used to generate letter combinations
+	 * @return List<String> - List of letter combinations
+	 */
+	public List<String> letterCombinationsRecursive(String digits) {
+		
+		return null;
+	}
 }
