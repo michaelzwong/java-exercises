@@ -27,28 +27,28 @@ public class LC018 {
 		if (nums.length < 4) {
 			return result;
 		}
-		
+
 		Arrays.sort(nums);
-		
+
 		int i = 0;
-		
-		while(i < nums.length - 3) {
-			
+
+		while (i < nums.length - 3) {
+
 			int first = nums[i];
 			int j = i + 1;
-			
-			while(j < nums.length - 2) {
-				
+
+			while (j < nums.length - 2) {
+
 				int second = nums[j];
 				int l = j + 1;
 				int r = nums.length - 1;
 				int twoSum = first + second;
-				
-				while(l < r) {
+
+				while (l < r) {
 					int left = nums[l];
 					int right = nums[r];
 					int sum = twoSum + left + right;
-					if(target - sum == 0) {
+					if (target - sum == 0) {
 						List<Integer> qr = new ArrayList<Integer>();
 						qr.add(nums[i]);
 						qr.add(nums[j]);
@@ -56,20 +56,20 @@ public class LC018 {
 						qr.add(nums[r]);
 						result.add(qr);
 						// Find a new left, right combination
-						while(l < r && nums[l] == left && nums[r] == right) {
+						while (l < r && nums[l] == left && nums[r] == right) {
 							l++;
 							r--;
 						}
-					} else if(target - sum > 0) {
+					} else if (target - sum > 0) {
 						l++;
 						// Find a new left value
-						while(l < r && nums[l] == left) {
+						while (l < r && nums[l] == left) {
 							l++;
 						}
 					} else {
 						r--;
 						// Find a new right value
-						while(l < r && nums[r] == right) {
+						while (l < r && nums[r] == right) {
 							r--;
 						}
 					}
@@ -77,38 +77,38 @@ public class LC018 {
 				}
 				// Found a new second value
 				// Ex. second = nums[j] = 1, nums[j + 1] = 2
-				if(j + 1 < nums.length - 2 && second != nums[j + 1]) {
+				if (j + 1 < nums.length - 2 && second != nums[j + 1]) {
 					j++;
 					continue;
 				}
-				
+
 				// Find a new first and second value
 				// Ex. first = nums[i] = 1, second = nums[j] = 1
 				// Increment both first and second until either of them are different
-				if(first == second) {
+				if (first == second) {
 					// Find a new first and second value
-					// Ex: first = nums[i] = 
-					while(i < nums.length - 3 && j < nums.length - 2 && first == nums[i] && second == nums[j]) {
+					// Ex: first = nums[i] =
+					while (i < nums.length - 3 && j < nums.length - 2 && first == nums[i] && second == nums[j]) {
 						i++;
 						j++;
 					}
 					continue;
 				}
-				
+
 				// Find a new second value in the case first does not equal second
 				// Ex: second = nums[j] = 1, nums[j + 1] = 1
 				// Increment j until a new value is found
-				while(j < nums.length - 2 && second == nums[j]) {
+				while (j < nums.length - 2 && second == nums[j]) {
 					j++;
 				}
 
 			}
 			i++;
-			
-			while(i < nums.length - 3 && first == nums[i]) {
+
+			while (i < nums.length - 3 && first == nums[i]) {
 				i++;
 			}
-			
+
 		}
 
 		return result;
