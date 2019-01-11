@@ -26,6 +26,6 @@ public class Main {
 //		System.out.println(median);
 		LC017 test = new LC017();
 		
-		test.letterCombinations("23");
+		System.out.println(test.letterCombinationsRecursive("23"));
 	}	
 }
