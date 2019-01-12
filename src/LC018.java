@@ -104,7 +104,8 @@ public class LC018 {
 
 			}
 			i++;
-
+			
+			// Find a new first value
 			while (i < nums.length - 3 && first == nums[i]) {
 				i++;
 			}
