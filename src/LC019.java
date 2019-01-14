@@ -10,7 +10,7 @@ public class LC019 {
 	 * head.
 	 * 
 	 * @param head - The head of the linked list
-	 * @param n - The n-th node from the end of the list to remove
+	 * @param n    - The n-th node from the end of the list to remove
 	 * @return ListNode - Linked list with n-th node from end removed
 	 */
 	public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -18,23 +18,20 @@ public class LC019 {
 		ListNode dummy = new ListNode(0);
 		dummy.next = head;
 
-		// Use two pointers to traverse the linked list
 		ListNode ptrOne = dummy;
 		ListNode ptrTwo = dummy;
 
-		// Keep the pointers n + 1 nodes apart.
-		// Ex. n = 2, then if ptrOne = length - 3 and ptrTwo = length
-		// Once ptrTwo hits the end of the list, ptrOne will
-		// be at the node before the Nth node
-		for (int i = 1; i <= n + 1; i++) {
+		// Advance ptrTwo so that the there are n + 1 nodes in between the two pointers
+		for(int i = 0; i <= n; i++) {
 			ptrTwo = ptrTwo.next;
 		}
-
-		while (ptrTwo != null) {
+		
+		while(ptrTwo != null) {
 			ptrOne = ptrOne.next;
 			ptrTwo = ptrTwo.next;
 		}
-
+		
+		// At this point, ptrTwo is at the end (null)
 		ptrOne.next = ptrOne.next.next;
 
 		return dummy.next;
