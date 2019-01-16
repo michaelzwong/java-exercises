@@ -22,23 +22,21 @@ public class LC022 {
 		recurse("", result, n, n);
 		return result;
 	}
-	
+
 	private void recurse(String substr, List<String> result, int left, int right) {
-		if(left > right) {
+		if (left > right) {
 			return;
 		}
-		if(left > 0) {
+		if (left > 0) {
 			recurse(substr + "(", result, left - 1, right);
 		}
-		
-		if(right > 0) {
+		if (right > 0) {
 			recurse(substr + ")", result, left, right - 1);
 		}
-		
-		if(left == 0 && right == 0) {
+		if (left == 0 && right == 0) {
 			result.add(substr);
 			return;
 		}
 	}
-	
+
 }
