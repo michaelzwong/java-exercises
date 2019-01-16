@@ -18,47 +18,27 @@ public class LC022 {
 	 * @return List<String> - List of all the combinations.
 	 */
 	public List<String> generateParenthesis(int n) {
-		
-		Queue<String> list = new LinkedList<String>();
-		
-		recurse(list, 0, n);
-		
-		return new ArrayList<String>(list);
+		List<String> result = new ArrayList<String>();
+		recurse("", result, n, n);
+		return result;
 	}
 	
-	private void recurse(Queue<String> list, int curDepth, int depth) {
+	private void recurse(String substr, List<String> result, int left, int right) {
+		if(left > right) {
+			return;
+		}
+		if(left > 0) {
+			recurse(substr + "(", result, left - 1, right);
+		}
 		
-		// Base case
-		if(curDepth == 0) {
-			list.offer("");
-			recurse(list, ++curDepth, depth);
+		if(right > 0) {
+			recurse(substr + ")", result, left, right - 1);
 		}
-		else if(curDepth <= depth) {
-			
-			int size = list.size();
-						
-			int i = 0;
-			
-			while(i < size) {
-				String s = list.poll();
-				
-				String a = "()" + s;
-				String b = "(" + ")";
-				
-				list.offer(a);
-				list.offer(b);
-				
-				if(i > 0) {
-					String c = s + "()";
-					list.offer(c);
-				}
-                i++;
-			}
-			
-			recurse(list, ++curDepth, depth);
-			
+		
+		if(left == 0 && right == 0) {
+			result.add(substr);
+			return;
 		}
-        				
-		return;
 	}
+	
 }

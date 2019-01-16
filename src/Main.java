@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //import java.util.ArrayList;
 //import java.util.HashSet;
 //import java.util.Set;
@@ -24,8 +26,14 @@ public class Main {
 		
 //		double median = LC004.findMedianSortedArrays(nums, nums);
 //		System.out.println(median);
-		LC017 test = new LC017();
+		// LC022 test = new LC022();
 		
-		System.out.println(test.letterCombinationsRecursive("23"));
+		//System.out.println(test.letterCombinationsRecursive("23"));
+		LC022 test = new LC022();
+		ArrayList<String> al = (ArrayList<String>) test.generateParenthesis(3);
+		for(String s : al) {
+			System.out.println(s);
+		}
+		
 	}	
 }
