@@ -29,11 +29,8 @@ public class Main {
 		// LC022 test = new LC022();
 		
 		//System.out.println(test.letterCombinationsRecursive("23"));
-		LC022 test = new LC022();
-		ArrayList<String> al = (ArrayList<String>) test.generateParenthesis(3);
-		for(String s : al) {
-			System.out.println(s);
-		}
-		
+		LC038 test = new LC038();
+		System.out.println(test.countAndSay(2));
+
 	}	
 }
