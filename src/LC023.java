@@ -22,23 +22,28 @@ public class LC023 {
 		Queue<ListNode> pQueue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
 			@Override
 			public int compare(ListNode l1, ListNode l2) {
-				if (l1.val < l2.val) {
-					return -1;
-				} else if (l1.val == l2.val) {
-					return 0;
-				} else {
-					return 1;
-				}
+				return l1.val - l2.val;
 			}
 		});
 		
 		for(ListNode node : lists) {
 			if(node != null)
 				pQueue.add(node);
-			
 		}
 		
-		return null;
+		ListNode dummy = new ListNode(0);
+		ListNode tail = dummy;
+		
+		while(!pQueue.isEmpty()) {
+			// Remove the node containing the smallest integer
+			tail.next = pQueue.poll();
+			tail = tail.next;
+			
+			if(tail.next != null)
+				pQueue.add(tail.next);
+		}
+		
+		return dummy.next;
 	}
 
 	/**
