@@ -18,6 +18,10 @@ public class LC023 {
 	 * @return ListNode - The head of the merged linked list.
 	 */
 	public ListNode mergeKLists(ListNode[] lists) {
+		
+		if(lists.length == 0) {
+            return null;
+        }
 
 		Queue<ListNode> pQueue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
 			@Override
