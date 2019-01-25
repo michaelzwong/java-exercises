@@ -22,7 +22,8 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Preorder p = new Preorder();
+		Preorder preorder = new Preorder();
+		Postorder postorder = new Postorder();
 		Node grandchildOne = new Node(5, null);
 		Node grandchildTwo = new Node(6, null);
 		Node grandchildThree = new Node(7, null);
@@ -39,8 +40,13 @@ public class Main {
 		children.add(childTwo);
 		children.add(childThree);
 		Node parent = new Node(1, children);
-		List<Integer> result = p.preorderRecurse(parent);
-		for(Integer num : result) {
+		List<Integer> preorderResult = preorder.preorderRecurse(parent);
+		for(Integer num : preorderResult) {
+			System.out.print(num);
+		}
+		System.out.println();
+		List<Integer> postorderResult = postorder.postorderRecurse(parent);
+		for(Integer num : postorderResult) {
 			System.out.print(num);
 		}
 	}
