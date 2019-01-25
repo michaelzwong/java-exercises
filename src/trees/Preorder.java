@@ -56,10 +56,6 @@ public class Preorder {
 	
 	private void recurse(Node node, List<Integer> result) {
 		
-		if(node == null) {
-			return;
-		}
-		
 		result.add(node.val);
 		
 		if(node.children == null) {
