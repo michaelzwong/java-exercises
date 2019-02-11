@@ -29,12 +29,15 @@ public class LC029 {
 		/* Integer division is guaranteed to be 0 */
 		// a. dividend is 0
 		// b. divisor > dividend
+		/* Return early */
 		if (lDividend == 0 || lDivisor > lDividend) {
 			return 0;
 		}
-
+		
+		/* Recursively "divide" using addition */
 		long result = recursivelyDivide(lDividend, lDivisor);
-
+		
+		/* Check if result is negative */
 		if (dividend > 0 && divisor < 0 || (dividend < 0 && divisor > 0)) {
 			result = -result;
 		}
@@ -48,7 +51,6 @@ public class LC029 {
 
 	/**
 	 * Recursively "divide" using addition.
-	 * 
 	 * 
 	 * @param dividend
 	 * @param divisor
