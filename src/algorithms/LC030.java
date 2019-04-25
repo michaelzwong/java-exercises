@@ -1,10 +1,8 @@
 package algorithms;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * LeetCode Hard.
@@ -30,13 +28,23 @@ public class LC030 {
 		int wordLength = words[0].length();
 		
 		// Keep track of the usage of each word
-		Set<String> wordSet = new HashSet<String>();
+		Map<String, Integer> wordMap = new HashMap<String, Integer>();
 		for(int i = 0; i < words.length; i ++) {
-			wordSet.add(words[i]);
+			// If wordMap already contains the key, increment its value by 1 (number of times the word is in the HashMap)
+			if(wordMap.containsKey(words[i])) {
+				wordMap.put(words[i], wordMap.get(words[i]) + 1);
+			} else {
+				wordMap.put(words[i], 0);
+			}
 		}
 		
-		for(int i = 0; i < s.length(); i ++) {
-			
+		int j = 0;
+		
+		while(j + wordLength < s.length() && !wordMap.isEmpty()) {
+			String word = s.substring(j, j + wordLength);
+			if(wordMap.containsKey(word)) {
+				wordMap.remove(word);
+			}
 		}
 		return null;
 	}
