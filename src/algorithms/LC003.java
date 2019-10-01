@@ -1,6 +1,6 @@
 package algorithms;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * LeetCode Medium.
@@ -18,34 +18,16 @@ public class LC003 {
 	 */
 	public int lengthOfLongestSubstring(String s) {
 
-		int i = 0; // Keeps track of current index for s
-		int j = 0; // Count of longest
-		int start = 0;
-		int longest = 0;
-		List<Character> charList = new ArrayList<Character>();
-
-		while (i < s.length()) {
-			// Record index of first character in substring
-
-			// Get the current character
-			char currChar = s.charAt(i);
-
-			// If the current character is in the list
-			if (charList.contains(currChar)) {
-				i = start;
-				charList.clear();
-				j = 0;
-			} else {
-				if (charList.isEmpty()) {
-					start = i;
-				}
-				charList.add(s.charAt(i));
-				j++;
-			}
-			i++;
-			if (j > longest)
-				longest = j;
-		}
-		return longest;
+        int ans = 0;
+        int length = s.length();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        for(int i = -1, j = 0; j < length; j++) {
+            if(map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
+            }
+            ans = Math.max(j - i, ans);
+            map.put(s.charAt(j), j);
+        }
+        return ans;
 	}
 }
