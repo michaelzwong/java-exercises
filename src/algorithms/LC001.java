@@ -17,25 +17,16 @@ public class LC001 {
 	 * @return int[] - Indices of the two numbers that add up to a specific target
 	 */
 	public int[] twoSum(int[] nums, int target) {
-		// 0th item makes length - (1 + 0 comparisons)
-		// 1st item makes length - (1 + 1 comparisons)
-		// 2nd item makes length - (1 + 2 comparisons)
-		// last item makes length - (1 + 3 comparisons) or 0 comparisons by (*)
-		// Therefore, for every i-th item, you make length - (1 + i) comparisons (*),
-		// since i = length
-		int n = nums.length - 1;
-		int m = nums.length;
-		// Loop through n sets of comparisons
-		for (int i = 0; i < n; i++) {
-			for (int j = i + 1; j < m; j++) {
-				int sum = nums[i] + nums[j];
-				print_sum(i, j, sum);
-				if (sum == target) {
-					return new int[] { i, j };
-				}
-			}
-		}
-		return null;
+
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if(map.containsKey(complement)) {
+                return new int [] { map.get(complement), i };
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
 
 	}
 
