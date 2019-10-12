@@ -14,104 +14,42 @@ public class LC005 {
 	 * @param s - String to look through
 	 * @return String - The longest palindrome found
 	 */
-	public static String longestPalindrome(String s) {
-
-		if (s == null || s.length() == 1) {
-			return "";
-		}
-
-		// We will create an array to store the string
-		// This will simplify the algorithm
-		char[] charArray = new char[s.length() * 2 + 1];
-
-		int i = 0;
-
-		// Insert a special character ('#') between each character in the string
-		// as well as at the ends of the string
-		// i.e. bob -> #b#o#b#
-		while (i < charArray.length) {
-			charArray[i] = (i % 2 == 0) ? '#' : s.charAt((i - 1) / 2);
-			i++;
-		}
-
-		// System.out.println(charArray);
-
-		int longestCenterIndex = 0;
-		int longestLength = 0;
-
-		for (int center = 0; center < charArray.length; center++) {
-			int j = 1;
-			int paliLength = 0;
-			// System.out.println("Center " + center + ":" + " " +
-			// Character.toString(charArray[center]));
-			while (center - j >= 0 && center + j < charArray.length) {
-				if (charArray[center - j] == charArray[center + j]) {
-					// System.out.println(Character.toString(charArray[center - j]) + " == " +
-					// Character.toString(charArray[center + j]));
-					paliLength++;
-				}
-				if (paliLength > longestLength) {
-					longestCenterIndex = center;
-					longestLength = paliLength;
-					// System.out.println("Longest Center Index (" + longestCenterIndex + ") of
-					// Length " + longestLength);
-				}
-				if (charArray[center - j] != charArray[center + j]) {
-					break;
-				}
-				j++;
-
-			}
-		}
-
-		String longestSubstring = "";
-		// extract longest substring from char array
-		for (i = longestCenterIndex - longestLength; i < longestCenterIndex + longestLength; i++) {
-			if (charArray[i] != '#') {
-				longestSubstring += charArray[i];
-			}
-		}
-
-//        
-//        int[] intArray = new int[s.length()*2+1];
-//        
-//        // Loop through the string and find the longest palindrome containing center i
-//        // and store the results in an int array
-//        
-//        int center = 0; // current center
-//        int right = 0; // right limit
-//        
-//        for(i = 1; i < intArray.length; i++) {
-//        	int mirror = center - (i - center);
-//        	
-//        	if(right > i) {
-//        		intArray[i] = Math.min(right - i, intArray[mirror]);
-//        	}
-//        	
-//        }
-
-		return longestSubstring;
-	}
-
-	/**
-	 * Helper method for longestPalindrome. Checks if a string is a palindrome.
-	 * 
-	 * @param s - String to check
-	 * @return boolean - Palindrome or not
-	 */
-	public static boolean isPalindrome(String s) {
-		if (s.length() == 1) {
-			return true;
-		}
-		int count = s.length() / 2;
-		if (s.length() % 2 == 1) {
-			count++;
-		}
-		for (int i = 0; i < count; i++) {
-			if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-				return false;
-			}
-		}
-		return true;
-	}
+    public String longestPalindrome(String s) {
+        // s can be null or have length of 0
+        if(s == null || s.length() == 0) {
+            return "";
+        }
+        // Keep track of the longest palindrome so far
+        String maxPalindrome = "";
+        // Loop through each char in s
+        for(int i = 0; i < s.length(); i++) {
+            // Find length of palindrome centered at each char c
+            // Case 1: palindrome is centered at i
+            int len1 = getPalindromeLength(s, i, i);
+            // Case 2: palindrome is centered between i and i + 1
+            int len2 = getPalindromeLength(s, i, i + 1);
+            // Find which length is longer
+            int len = Math.max(len1, len2);
+           
+            if(len > maxPalindrome.length()) {
+                String palindrome;
+                if(len % 2 == 0) {
+                    palindrome = s.substring(i - len/2 + 1, i + len/2 + 1);
+                } else {
+                    palindrome = s.substring(i - len/2, i + len/2 + 1);
+                }
+                maxPalindrome = len > maxPalindrome.length() ? palindrome : maxPalindrome;
+            }
+            
+        }
+        return maxPalindrome;
+    }
+    // Get the longest palindrome 
+    private int getPalindromeLength(String s, int l, int r) {
+        while(l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+            l--;
+            r++;
+        }
+        return r - l - 1;
+    }
 }
