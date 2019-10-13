@@ -2,3 +2,5 @@
 .idea/
 .metadata/
 java-exercises.iml
+.DS_Store
+src/.DS_Store
