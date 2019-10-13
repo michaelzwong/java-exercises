@@ -13,15 +13,20 @@ public class LC007 {
 	 * @return int - Reversed number
 	 */
 	public int reverse(int x) {
-		int resultNumber = 0;
-		for (int i = x; i != 0; i /= 10) {
-			if (resultNumber > Integer.MAX_VALUE / 10 || (resultNumber == Integer.MAX_VALUE / 10 && (i % 10) > 7))
-				return 0;
-			if (resultNumber < Integer.MIN_VALUE / 10 || (resultNumber == Integer.MIN_VALUE / 10 && (i % 10) < -8))
-				return 0;
-			resultNumber = resultNumber * 10 + i % 10;
-		}
-		return resultNumber;
-
+        if(x == Integer.MIN_VALUE) {
+            return 0;
+        }
+        int answer = 0;
+        while(x != 0) {
+            if(answer > Integer.MAX_VALUE / 10 
+               || answer < Integer.MIN_VALUE / 10
+               || (answer == Integer.MAX_VALUE / 10 && x % 10 > Integer.MAX_VALUE % 10)
+               || (answer == Integer.MIN_VALUE / 10 && x % 10 < Integer.MIN_VALUE % 10)) {
+                return 0;
+            }
+            answer = answer * 10 + x % 10;
+            x /= 10;
+        }
+        return answer;
 	}
 }
