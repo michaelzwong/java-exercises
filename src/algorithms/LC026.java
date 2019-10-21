@@ -18,23 +18,18 @@ public class LC026 {
 	 * @return - length of array with unique numbers
 	 */
 	public int removeDuplicates(int[] nums) {
-		if (nums.length == 0) {
-			return 0;
-		}
-		int n = -1;
-		if (nums[0] == -1) {
-			n = -2;
-		}
-		int j = 0;
-		for (int i = 0; i < nums.length; i++) {
-			// init num
-			if (nums[i] != n) {
-				nums[j] = nums[i];
-				n = nums[i];
-				j += 1;
-			}
-		}
-		return j;
+		// The array up to index and not including index is unique
+		int index = 1;
+        for(int i = 0; i < nums.length - 1; i++) {
+            // If number is unique, replace number at index with the unique number
+            if(nums[i] != nums[i+1]) {
+                // Increment index, since our unique array has grow in size
+                nums[index++] = nums[i+1];
+            }
+            // Otherwise we keep looping until we find a unique number
+        }
+        // Array from 0 up to index and not including index is unique
+		return index;
 	}
 
 }

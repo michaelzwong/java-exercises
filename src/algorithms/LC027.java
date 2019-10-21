@@ -20,29 +20,21 @@ public class LC027 {
 	 * @return - length of array without those value instances.
 	 */
 	public int removeElement(int[] nums, int val) {
-
-		int i = 0;
-		int length = 0;
-
-		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-
-		while (i < nums.length) {
-			if (nums[i] != val) {
-				length++;
-				arrayList.add(nums[i]);
-			}
-			i++;
-		}
-
-		int len = arrayList.size();
-
-		i = 0;
-
-		while (i < nums.length && i < len) {
-			nums[i] = arrayList.get(i);
-			i++;
-		}
-
-		return length;
+		Arrays.sort(nums);
+        int i = 0;
+        while(i < nums.length && nums[i] != val) {
+            i++;
+        }
+        if(i == nums.length) {
+            return i;
+        }
+        int index = i;
+        while(i < nums.length) {
+            if(nums[i] != val) {
+                nums[index++] = nums[i];
+            }
+            i++;
+        }
+        return index;
 	}
 }
