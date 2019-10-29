@@ -1,5 +1,7 @@
 package algorithms;
 
+// import java.util.Stack;
+
 /**
  * LeetCode Hard.
  *
@@ -49,6 +51,28 @@ public class LC032 {
       }
 
       return longest;
+
+      // Stack Solution
+      // Stack<Integer> stack = new Stack<Integer>();
+      // // The bottom of the stack helps keep track of where a potentially valid substring starts
+      // // Since we have not checked the 0th character of s yet, by default 0 can potentially be part
+      // // of a valid substring
+      // stack.push(-1);
+      // // Keep track of the longest substring
+      // int longest=0;
+      // for(int i=0; i<s.length(); i++) {
+      //     if(s.charAt(i)=='(') {
+      //         stack.push(i);
+      //     } else {
+      //         stack.pop();
+      //         if(stack.isEmpty()) {
+      //             stack.push(i);
+      //         } else {
+      //             longest = Math.max(longest, i-stack.peek());
+      //         }
+      //     }
+      // }
+      // return longest;
 
   }
 
