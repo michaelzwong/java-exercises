@@ -3,7 +3,7 @@ package algorithms;
 // import java.util.Stack;
 
 /**
- * LeetCode Hard.
+ * LeetCode Medium.
  *
  * @author michaelwong
  *
