@@ -1,12 +1,8 @@
 package algorithms;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.lang.Math;
-
 /**
- * LeetCode Medium.
- * 
+ * LeetCode Hard.
+ *
  * @author michaelwong
  *
  */
@@ -14,7 +10,7 @@ public class LC039 {
 
 	/**
      * Given an unsorted integer array, find the smallest missing positive integer.
-     * 
+     *
 	 * @param nums - Array of numbers
 	 * @return first missing positive number
 	 */
@@ -33,7 +29,7 @@ public class LC039 {
         }
         return nums.length - numNonPos + 1;
     }
-    
+
     private int moveNonPositivesToFront(int[] nums) {
         int j = 0;
         for(int i = 0; i < nums.length; i++) {
