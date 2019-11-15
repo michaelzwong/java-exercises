@@ -6,7 +6,7 @@ package algorithms;
  * @author michaelwong
  *
  */
-public class LC039 {
+public class LC041 {
 
 	/**
      * Given an unsorted integer array, find the smallest missing positive integer.
