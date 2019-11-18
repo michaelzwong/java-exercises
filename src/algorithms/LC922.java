@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * @author michaelwong
  *
  */
-public class LC062 {
+public class LC922 {
 
 	/**
    * Given an array A of positive integers, call a

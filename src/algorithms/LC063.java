@@ -5,7 +5,7 @@ package algorithms;
  * @author michaelwong
  *
  */
-public class LC062 {
+public class LC063 {
 
 	/**
    * A robot is located at the top-left corner of a m x n grid
@@ -17,7 +17,7 @@ public class LC062 {
    * How many unique paths would there be?
    * An obstacle and empty space is marked as 1 and 0 respectively in the grid.
    * Note: m and n will be at most 100.
-	 * 
+	 *
 	 * @param obstacleGrid - the grid we are calculating from
    * @return number of unique paths
 	 */
