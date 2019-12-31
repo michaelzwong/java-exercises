@@ -4,26 +4,25 @@ package algorithms;
  * LeetCode Hard.
  *
  * @author michaelwong
- *
  */
 public class LC041 {
 
-	/**
+    /**
      * Given an unsorted integer array, find the smallest missing positive integer.
      *
-	 * @param nums - Array of numbers
-	 * @return first missing positive number
-	 */
+     * @param nums - Array of numbers
+     * @return first missing positive number
+     */
     public int firstMissingPositive(int[] nums) {
         int numNonPos = moveNonPositivesToFront(nums);
-        for(int i = numNonPos; i < nums.length; i++) {
+        for (int i = numNonPos; i < nums.length; i++) {
             int index = Math.abs(nums[i]) + numNonPos - 1;
-            if(index < nums.length && index >= 0) {
+            if (index < nums.length && index >= 0) {
                 nums[index] = -Math.abs(nums[index]);
             }
         }
-        for(int i = numNonPos; i < nums.length; i++) {
-            if(nums[i] > 0) {
+        for (int i = numNonPos; i < nums.length; i++) {
+            if (nums[i] > 0) {
                 return i - numNonPos + 1;
             }
         }
@@ -32,8 +31,8 @@ public class LC041 {
 
     private int moveNonPositivesToFront(int[] nums) {
         int j = 0;
-        for(int i = 0; i < nums.length; i++) {
-            if(nums[i] <= 0) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] <= 0) {
                 int temp = nums[j];
                 nums[j] = nums[i];
                 nums[i] = temp;

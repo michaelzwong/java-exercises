@@ -1,4 +1,5 @@
 package algorithms;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -7,42 +8,41 @@ import java.util.Stack;
  * LeetCode Easy.
  *
  * @author michaelwong
- *
  */
 public class LC020 {
-	
-	/**
-	 * Open brackets must be closed by the same type of brackets. Open brackets must
-	 * be closed in the correct order.
-	 *
-	 * @param s - Parentheses to check
-	 * @return boolean - Whether or not parentheses are valid
-	 */
-	public boolean isValidStack(String s) {
 
-		Map<Character, Character> mMap = new HashMap<Character, Character>();
+    /**
+     * Open brackets must be closed by the same type of brackets. Open brackets must
+     * be closed in the correct order.
+     *
+     * @param s - Parentheses to check
+     * @return boolean - Whether or not parentheses are valid
+     */
+    public boolean isValidStack(String s) {
 
-		mMap.put(')', '(');
-		mMap.put('}', '{');
-		mMap.put(']', '[');
+        Map<Character, Character> mMap = new HashMap<Character, Character>();
 
-		Stack<Character> stack = new Stack<Character>();
+        mMap.put(')', '(');
+        mMap.put('}', '{');
+        mMap.put(']', '[');
 
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
+        Stack<Character> stack = new Stack<Character>();
 
-			if (mMap.containsKey(c)) {
-				char topElement = stack.empty() ? '$' : stack.pop();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
 
-				if (topElement != mMap.get(c)) {
-					return false;
-				}
-			} else {
-				stack.push(c);
-			}
-		}
+            if (mMap.containsKey(c)) {
+                char topElement = stack.empty() ? '$' : stack.pop();
 
-		return stack.isEmpty();
+                if (topElement != mMap.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
 
-	}
+        return stack.isEmpty();
+
+    }
 }
