@@ -5,7 +5,7 @@ package algorithms;
  *
  * @author michaelwong
  */
-public class LC064 {
+public class LC070 {
 
     /**
      * You are climbing a stair case. It takes n steps to reach to the top.
