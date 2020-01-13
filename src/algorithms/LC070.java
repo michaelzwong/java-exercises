@@ -1,7 +1,7 @@
 package algorithms;
 
 /**
- * LeetCode Medium.
+ * LeetCode Easy.
  *
  * @author michaelwong
  */
