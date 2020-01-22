@@ -5,7 +5,7 @@ package algorithms;
  *
  * @author michaelwong
  */
-public class LC0240 {
+public class LC240 {
 
     /**
      * Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:

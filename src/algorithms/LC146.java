@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author michaelwong
  */
-public class LC064 {
+public class LC146 {
 
     /**
      * Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.
@@ -23,7 +23,8 @@ public class LC064 {
     private DoubleLinkedListNode tailNode;
     private int capacity;
 
-    public LRUCache(int capacity) {
+    // LRU cache
+    public LC146(int capacity) {
         map = new HashMap<Integer, DoubleLinkedListNode>();
         headNode = new DoubleLinkedListNode();
         tailNode = new DoubleLinkedListNode();

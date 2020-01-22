@@ -1,16 +1,13 @@
 package algorithms;
 
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * LeetCode Medium.
  *
  * @author michaelwong
  */
-public class LC019 {
+public class LC752 {
     /**
      * You have a lock in front of you with 4 circular wheels.
      * Each wheel has 10 slots: '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'.
